@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-blue no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Carla Burns — counsellor, psychotherapist, and former artist. Background, training, and the path to this work.">
+
+  <title>About — Carla Burns</title>
+
+  <!-- Same three-theme font sets as index.html -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&family=Inter:wght@400;500&family=Lora:ital,wght@0,400;0,500;1,400&family=Nunito+Sans:opsz,wght@6..12,400;6..12,500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body data-page="about">
+
+  <!-- ═══════════════════════════════════════════════════════
+       NAV  (links route back to index.html for on-page anchors)
+  ═══════════════════════════════════════════════════════ -->
+  <nav class="nav" id="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+
+      <a href="index.html" class="nav__brand" aria-label="Carla Burns — home">
+        Carla Burns
+      </a>
+
+      <!-- Desktop -->
+      <div class="nav__right">
+        <div class="nav__links">
+          <a href="index.html#how"       class="nav__link">How</a>
+          <a href="index.html#practical" class="nav__link">Practical</a>
+          <a href="about.html"           class="nav__link is-active" aria-current="page">About</a>
+          <a href="index.html#contact"   class="nav__link">Contact</a>
+        </div>
+
+        <div class="theme-toggle" role="group" aria-label="Choose colour theme">
+          <button class="theme-toggle__btn is-active" data-theme="theme-blue"     aria-pressed="true">blue</button>
+          <button class="theme-toggle__btn"           data-theme="theme-green"    aria-pressed="false">green</button>
+          <button class="theme-toggle__btn"           data-theme="theme-gradient" aria-pressed="false">teal</button>
+        </div>
+      </div>
+
+      <!-- Mobile: hamburger -->
+      <button
+        class="nav__toggle"
+        id="nav-toggle"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="nav-drawer"
+      >
+        <span class="nav__bar"></span>
+        <span class="nav__bar"></span>
+        <span class="nav__bar"></span>
+      </button>
+
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="nav__drawer" id="nav-drawer" role="region" aria-label="Mobile navigation">
+      <a href="index.html#how"       class="nav__link">How</a>
+      <a href="index.html#practical" class="nav__link">Practical</a>
+      <a href="about.html"           class="nav__link is-active" aria-current="page">About</a>
+      <a href="index.html#contact"   class="nav__link">Contact</a>
+
+      <div class="theme-toggle" role="group" aria-label="Choose colour theme">
+        <button class="theme-toggle__btn is-active" data-theme="theme-blue"     aria-pressed="true">blue</button>
+        <button class="theme-toggle__btn"           data-theme="theme-green"    aria-pressed="false">green</button>
+        <button class="theme-toggle__btn"           data-theme="theme-gradient" aria-pressed="false">teal</button>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       ABOUT
+  ═══════════════════════════════════════════════════════ -->
+  <main>
+    <section class="about-page section">
+      <div class="container container--narrow">
+
+        <!-- Portrait -->
+        <div class="about-page__portrait-wrap reveal" data-hero data-delay="0">
+          <img
+            src="assets/Carla_small_profile.png"
+            alt="Portrait of Carla Burns"
+            class="about-page__portrait"
+            width="240"
+            height="240"
+            loading="eager"
+          >
+        </div>
+
+        <span class="label reveal" data-hero data-delay="100">About</span>
+
+        <!-- Biography -->
+        <div class="about-page__bio">
+
+          <p class="about-page__opener reveal" data-hero data-delay="200">
+            I'm Carla, a counsellor and psychotherapist in private practice since 2018.
+            I trained in integrative transpersonal counselling and psychotherapy at
+            Re-Vision College in London, and I'm a registered member of UKCP and BACP.
+          </p>
+
+          <p class="reveal" data-stagger="0">
+            Before I trained as a therapist, I worked for many years as an artist. I studied Fine Art
+            and have always been drawn to the same questions — what is it like to be human? How do we
+            make meaning? How do we know ourselves, and how do others know us? Counselling, for me,
+            is the same inquiry through a different medium.
+          </p>
+
+          <p class="reveal" data-stagger="1">
+            Before entering private practice, I worked in NHS anxiety services providing CBT, as an
+            assistant nurse in acute psychiatric and dementia wards, and as a support worker with
+            neurodiverse adults and children. That breadth of experience shapes how I sit with
+            difficulty — I've seen suffering in many of its forms.
+          </p>
+
+          <p class="reveal" data-stagger="2">
+            I grew up in Ireland, raised by Scottish parents. That particular experience — of
+            navigating multiple heritages, of belonging almost but not quite, of making a home in
+            the gaps between cultures — gave me a lived understanding of what it means to be caught
+            between worlds.
+          </p>
+
+          <p class="reveal" data-stagger="3">
+            I came to this work in part through my own sustained experience of therapy. That gives
+            me what I'd call an inside-out understanding of what the journey involves — the courage
+            it takes, and what becomes possible.
+          </p>
+
+        </div>
+
+        <!-- Credentials -->
+        <p class="about-page__credentials reveal" data-stagger="4">
+          Registered with UKCP and BACP.&ensp;Trained at Re-Vision College, London.
+        </p>
+
+      </div>
+    </section>
+  </main>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <span>Carla Burns</span>
+      <span class="footer__sep" aria-hidden="true">·</span>
+      <span>© <span id="footer-year">2025</span></span>
+      <span class="footer__sep" aria-hidden="true">·</span>
+      <span>UKCP Registered&nbsp;&thinsp;·&thinsp;&nbsp;BACP Registered</span>
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>

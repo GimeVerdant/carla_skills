@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-blue no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Carla Burns — Counsellor and Psychotherapist. Integrative, relational and transpersonal practice. Sessions via Zoom or in person in Annacoty, Co. Limerick.">
+
+  <title>Carla Burns — Counsellor and Psychotherapist</title>
+
+  <!-- Fonts: all three theme pairs loaded upfront — no FOUT on theme switch
+       Blue     = Lora + Inter
+       Green    = Cormorant Garamond + DM Sans
+       Gradient = Fraunces + Nunito Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&family=Inter:wght@400;500&family=Lora:ital,wght@0,400;0,500;1,400&family=Nunito+Sans:opsz,wght@6..12,400;6..12,500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════
+       NAV
+  ═══════════════════════════════════════════════════════ -->
+  <nav class="nav" id="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+
+      <!-- Brand -->
+      <a href="index.html" class="nav__brand" aria-label="Carla Burns — home">
+        Carla Burns
+      </a>
+
+      <!-- Desktop: links + theme toggle -->
+      <div class="nav__right">
+        <div class="nav__links">
+          <a href="#how"       class="nav__link">How</a>
+          <a href="#practical" class="nav__link">Practical</a>
+          <a href="about.html" class="nav__link">About</a>
+          <a href="#contact"   class="nav__link">Contact</a>
+        </div>
+
+        <div class="theme-toggle" role="group" aria-label="Choose colour theme">
+          <button class="theme-toggle__btn is-active" data-theme="theme-blue"     aria-pressed="true">blue</button>
+          <button class="theme-toggle__btn"           data-theme="theme-green"    aria-pressed="false">green</button>
+          <button class="theme-toggle__btn"           data-theme="theme-gradient" aria-pressed="false">teal</button>
+        </div>
+      </div>
+
+      <!-- Mobile: hamburger -->
+      <button
+        class="nav__toggle"
+        id="nav-toggle"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="nav-drawer"
+      >
+        <span class="nav__bar"></span>
+        <span class="nav__bar"></span>
+        <span class="nav__bar"></span>
+      </button>
+
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="nav__drawer" id="nav-drawer" role="region" aria-label="Mobile navigation">
+      <a href="#how"       class="nav__link">How</a>
+      <a href="#practical" class="nav__link">Practical</a>
+      <a href="about.html" class="nav__link">About</a>
+      <a href="#contact"   class="nav__link">Contact</a>
+
+      <div class="theme-toggle" role="group" aria-label="Choose colour theme">
+        <button class="theme-toggle__btn is-active" data-theme="theme-blue"     aria-pressed="true">blue</button>
+        <button class="theme-toggle__btn"           data-theme="theme-green"    aria-pressed="false">green</button>
+        <button class="theme-toggle__btn"           data-theme="theme-gradient" aria-pressed="false">teal</button>
+      </div>
+    </div>
+  </nav>
+
+
+  <main id="top">
+
+    <!-- ═══════════════════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════════════════ -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero__inner">
+
+        <div class="hero__text">
+          <span class="hero__label reveal" data-hero data-delay="0">Carla Burns</span>
+          <span class="hero__tagline reveal" data-hero data-delay="100">Counsellor and Psychotherapist</span>
+
+          <p id="hero-heading" class="hero__statement reveal" data-hero data-delay="220">
+            I believe that even in the midst of suffering, there is an opportunity for profound meaning-making.
+          </p>
+
+          <p class="hero__sub reveal" data-hero data-delay="340">
+            Whether we meet online or in person, I offer a calm and respectful space to explore your unique story.
+          </p>
+
+          <a href="#contact" class="btn hero__cta reveal" data-hero data-delay="440">
+            Get in touch
+          </a>
+        </div>
+
+        <div class="hero__portrait-wrap reveal" data-hero data-delay="280">
+          <img
+            src="assets/Carla_small_profile.png"
+            alt="Portrait of Carla Burns"
+            class="hero__portrait"
+            width="180"
+            height="180"
+            loading="eager"
+          >
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         HOW I WORK
+    ═══════════════════════════════════════════════════════ -->
+    <section class="section section--surface" id="how" aria-labelledby="how-heading">
+      <div class="container">
+
+        <span class="label">How I work</span>
+
+        <div class="how__pillars" role="list">
+
+          <article class="pillar reveal" data-stagger="0" role="listitem">
+            <span class="pillar__name">Integrative</span>
+            <p class="pillar__body">
+              I practise integrative counselling and psychotherapy, drawing from a range of approaches —
+              psychodynamic, Jungian, gestalt, humanistic, and transpersonal. What we use depends on you:
+              your needs, your strengths, the way you make sense of things.
+            </p>
+          </article>
+
+          <article class="pillar reveal" data-stagger="1" role="listitem">
+            <span class="pillar__name">Relational</span>
+            <p class="pillar__body">
+              Our relationship is central to our work together. Patterns from your everyday life crop up
+              between us, and so our relationship can become a practice space for looking at those
+              patterns — with curiosity, not judgement.
+            </p>
+          </article>
+
+          <article class="pillar reveal" data-stagger="2" role="listitem">
+            <span class="pillar__name">Transpersonal</span>
+            <p class="pillar__body">
+              I bring a soulful, holistic understanding to this work. I'm interested in what your
+              difficulty might be asking of you — in the wider story of your life, not just the
+              presenting problem.
+            </p>
+          </article>
+
+        </div>
+
+        <p class="how__areas reveal" data-stagger="0">
+          grief and loss &nbsp;·&nbsp; anxiety and depression &nbsp;·&nbsp; trauma &nbsp;·&nbsp;
+          relationship difficulties &nbsp;·&nbsp; identity and belonging &nbsp;·&nbsp; life
+          transitions &nbsp;·&nbsp; shame &nbsp;·&nbsp; loneliness &nbsp;·&nbsp; low
+          self-esteem &nbsp;·&nbsp; anger &nbsp;·&nbsp; emptiness &nbsp;·&nbsp;
+          meaning-making &nbsp;·&nbsp; fertility &nbsp;·&nbsp; creativity and spirituality
+        </p>
+
+        <div class="how__poem reveal" data-stagger="0">
+          <p class="poem__lines">
+            <em>
+              You do not have to be good. You do not have to walk on your knees<br>
+              for a hundred miles through the desert, repenting.<br>
+              You only have to let the soft animal of your body<br>
+              love what it loves.
+            </em>
+          </p>
+          <p class="poem__attr">— Mary Oliver, <em>Wild Geese</em></p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         PRACTICAL
+    ═══════════════════════════════════════════════════════ -->
+    <section class="section" id="practical" aria-labelledby="practical-heading">
+      <div class="container">
+
+        <span id="practical-heading" class="label">Practical</span>
+
+        <dl class="practical__list">
+
+          <div class="practical__row reveal" data-stagger="0">
+            <dt class="practical__key">Fees</dt>
+            <dd class="practical__value">
+              <p>£75 / €85 per session.</p>
+              <p>I offer a free 20-minute Zoom consultation initially.</p>
+            </dd>
+          </div>
+
+          <div class="practical__row reveal" data-stagger="1">
+            <dt class="practical__key">Location</dt>
+            <dd class="practical__value">
+              <p>Zoom, or in person in Annacoty, Co. Limerick.</p>
+            </dd>
+          </div>
+
+          <div class="practical__row reveal" data-stagger="2">
+            <dt class="practical__key">Contact</dt>
+            <dd class="practical__value">
+              <p><a href="mailto:burnscarla@gmail.com" class="link">burnscarla@gmail.com</a></p>
+              <p>or use the form below ↓</p>
+            </dd>
+          </div>
+
+        </dl>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         CONTACT
+    ═══════════════════════════════════════════════════════ -->
+    <section class="section section--surface" id="contact" aria-labelledby="contact-heading">
+      <div class="container container--narrow">
+
+        <h2 id="contact-heading" class="contact__heading reveal">Get in touch.</h2>
+        <p class="contact__sub reveal" data-stagger="1">A free 20-minute conversation is always the first step.</p>
+
+        <!--
+          For production deployment: replace action with your form handler URL.
+          e.g. Formspree: action="https://formspree.io/f/YOUR_ID" method="POST"
+          e.g. Netlify: add netlify attribute: <form netlify ...>
+        -->
+        <form
+          class="contact__form reveal"
+          id="contact-form"
+          novalidate
+          data-stagger="2"
+        >
+
+          <div class="field">
+            <label for="name" class="field__label">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="field__input"
+              placeholder="Your name"
+              autocomplete="name"
+              required
+            >
+          </div>
+
+          <div class="field">
+            <label for="email" class="field__label">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="field__input"
+              placeholder="Your email"
+              autocomplete="email"
+              required
+            >
+          </div>
+
+          <div class="field">
+            <label for="message" class="field__label">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              class="field__input field__input--textarea"
+              placeholder="What's on your mind?"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--full">Send</button>
+
+          <p class="contact__privacy">
+            I'll only use your details to respond to your message.
+          </p>
+
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <span>Carla Burns</span>
+      <span class="footer__sep" aria-hidden="true">·</span>
+      <span>© <span id="footer-year">2025</span></span>
+      <span class="footer__sep" aria-hidden="true">·</span>
+      <span>UKCP Registered&nbsp;&thinsp;·&thinsp;&nbsp;BACP Registered</span>
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>

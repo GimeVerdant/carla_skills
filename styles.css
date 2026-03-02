@@ -1,0 +1,1216 @@
+/* ============================================================
+   CARLA BURNS — COUNSELLING
+   styles.css
+   ============================================================ */
+
+/* ============================================================
+   1. DESIGN TOKENS / CSS CUSTOM PROPERTIES
+   ============================================================ */
+
+:root {
+  /* ── Fonts: Blue theme ─────────────────────────────────── */
+  --font-serif: 'Lora', Georgia, 'Times New Roman', serif;
+  --font-sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* ── Colours: Blue theme (default) ────────────────────── */
+  --color-bg:           #F2F5F9;
+  --color-surface:      #FFFFFF;
+  --color-accent:       #4A7FA5;
+  --color-accent-muted: #D6E8F5;
+  --color-accent-hover: #3A6A8E;
+  --color-text:         #1C2333;
+  --color-text-muted:   #607080;
+  --color-border:       #CBD8E6;
+
+  /* ── Spacing (8px grid) ────────────────────────────────── */
+  --space-1:   8px;
+  --space-2:  16px;
+  --space-3:  24px;
+  --space-4:  32px;
+  --space-5:  40px;
+  --space-6:  48px;
+  --space-7:  64px;
+  --space-8:  80px;
+  --space-9:  96px;
+  --space-10: 128px;
+
+  /* ── Layout ────────────────────────────────────────────── */
+  --max-width:     1120px;
+  --content-width:  680px;
+  --gutter:        clamp(24px, 5vw, 72px);
+  --nav-height:     56px;
+
+  /* ── Border radius ─────────────────────────────────────── */
+  --radius-xs:   2px;
+  --radius-sm:   4px;
+  --radius-pill: 9999px;
+
+  /* ── Animation ─────────────────────────────────────────── */
+  --ease-out:       cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out:    cubic-bezier(0.45, 0, 0.55, 1);
+  --dur-fast:       180ms;
+  --dur-base:       250ms;
+  --dur-slow:       600ms;
+  --dur-theme:      320ms;
+}
+
+/* ── Blue theme: tree-in-blue.jpg as a full-page atmospheric texture ──
+   Heavy overlay (88%) keeps it barely perceptible — mood, not wallpaper.
+   Fixed attachment creates a subtle parallax as the user scrolls.       */
+
+html.theme-blue body {
+  background-image:
+    linear-gradient(rgba(242, 245, 249, 0.72), rgba(242, 245, 249, 0.72)),
+    url('assets/tree-in-blue.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* ============================================================
+   2. THEME: GREEN
+   ============================================================ */
+
+html.theme-green {
+  /* Fonts: richer, more organic serif + softer sans */
+  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans:  'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Colours */
+  --color-bg:           #F3F5EF;
+  --color-surface:      #FDFDF9;
+  --color-accent:       #4F6530;
+  --color-accent-muted: #DDE8CE;
+  --color-accent-hover: #3D4F24;
+  --color-text:         #252820;
+  --color-text-muted:   #636858;
+  --color-border:       #C5D0B6;
+}
+
+/* ── Green theme: misty trees on the HOW section ────────────
+   The PNG is already extremely soft (pale sage-grey, near-transparent
+   trunks) so it needs minimal treatment. A hair of surface-colour
+   overlay keeps white text containers readable above it.
+   bottom-center anchors the trunks at the base of the section.         */
+
+html.theme-green #how {
+  background-image:
+    linear-gradient(rgba(253, 253, 249, 0.18), rgba(253, 253, 249, 0.18)),
+    url('assets/trees%20copy_.png');
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+}
+
+/* Practical section: same trees, smaller, pinned bottom-right —
+   gives continuity without overwhelming the list content.              */
+html.theme-green #practical {
+  background-image: url('assets/trees%20copy_.png');
+  background-size: 48%;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+}
+
+/* ============================================================
+   3. THEME: GRADIENT (teal)
+   ============================================================ */
+
+html.theme-gradient {
+  /* Fonts: contemporary display serif + rounded sans */
+  --font-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-sans:  'Nunito Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Colours
+     --color-bg is used as a flat tint on elements (inputs, pillar hover).
+     The actual page background is the gradient, set on body below. */
+  --color-bg:           rgba(180, 228, 222, 0.32);
+  --color-surface:      rgba(255, 255, 255, 0.74);
+  --color-accent:       #2EC4B6;
+  --color-accent-muted: rgba(46, 196, 182, 0.18);
+  --color-accent-hover: #25A89D;
+  --color-text:         #192028;
+  --color-text-muted:   #4C5870;
+  --color-border:       rgba(170, 210, 205, 0.65);
+}
+
+/* ── Full-page gradient (replaces flat background-color) ── */
+html.theme-gradient body {
+  background: linear-gradient(140deg, #A6DED7 0%, #CAC2F2 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* ── Nav: frosted glass ──────────────────────────────────── */
+html.theme-gradient .nav {
+  background: rgba(255, 255, 255, 0.80);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+html.theme-gradient .nav.is-scrolled {
+  background: rgba(255, 255, 255, 0.90);
+  border-bottom-color: rgba(170, 210, 205, 0.55);
+}
+
+/* ── Mobile drawer: frosted ─────────────────────────────── */
+html.theme-gradient .nav__drawer {
+  background: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* ── Surface sections: frosted glass ────────────────────── */
+html.theme-gradient .section--surface {
+  background: rgba(255, 255, 255, 0.52);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* ── Pill buttons ───────────────────────────────────────── */
+html.theme-gradient .btn {
+  border-radius: var(--radius-pill);
+  padding: 11px 28px;
+}
+
+/* ── Theme toggle: sits on gradient, needs more contrast ── */
+html.theme-gradient .theme-toggle {
+  background: rgba(255, 255, 255, 0.65);
+  border-color: rgba(170, 210, 205, 0.55);
+}
+
+/* ── Pillar hover: white glass card ─────────────────────── */
+html.theme-gradient .pillar:hover {
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 12px 40px rgba(40, 60, 80, 0.08);
+}
+
+/* ── Form inputs: rounded + frosted ────────────────────── */
+html.theme-gradient .field__input {
+  background: rgba(255, 255, 255, 0.68);
+  border-radius: 10px;
+  border-color: rgba(170, 210, 205, 0.7);
+}
+
+html.theme-gradient .field__input:focus {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(46, 196, 182, 0.22);
+}
+
+/* ── Contact thanks message ─────────────────────────────── */
+html.theme-gradient .contact__thanks {
+  background: rgba(255, 255, 255, 0.65);
+  border-color: rgba(170, 210, 205, 0.6);
+}
+
+/* ── Footer: frosted strip ──────────────────────────────── */
+html.theme-gradient .footer {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-top-color: rgba(170, 210, 205, 0.5);
+}
+
+/* ── Portrait: soft shadow on gradient bg ───────────────── */
+html.theme-gradient .hero__portrait,
+html.theme-gradient .about-page__portrait {
+  box-shadow: 0 4px 24px rgba(40, 60, 80, 0.12);
+}
+
+/* ============================================================
+   4. THEME TRANSITION
+   Apply smooth colour transitions when toggling themes.
+   Do NOT include transform or opacity — those are animation.
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  transition:
+    background-color var(--dur-theme) ease,
+    border-color     var(--dur-theme) ease,
+    color            var(--dur-theme) ease,
+    box-shadow       var(--dur-theme) ease;
+}
+
+/* ============================================================
+   5. RESET
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* ============================================================
+   5. BASE
+   ============================================================ */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height);
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;   /* 15px */
+  line-height: 1.75;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ============================================================
+   6. LAYOUT UTILITIES
+   ============================================================ */
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.container--narrow {
+  max-width: var(--content-width);
+}
+
+.section {
+  padding-block: var(--space-9);
+}
+
+.section--surface {
+  background-color: var(--color-surface);
+}
+
+/* ============================================================
+   7. TYPOGRAPHY UTILITIES
+   ============================================================ */
+
+/* Section / field label: UPPERCASE SMALL CAPS */
+.label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;   /* 11px */
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-5);
+}
+
+/* Inline accent link */
+.link {
+  color: var(--color-accent);
+  text-underline-offset: 3px;
+  transition: opacity var(--dur-fast) ease;
+}
+
+.link:hover {
+  opacity: 0.75;
+  text-decoration: underline;
+}
+
+/* ============================================================
+   8. ANIMATION SYSTEM
+   ============================================================ */
+
+/* Elements with .reveal start invisible and slide in */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity   var(--dur-slow) var(--ease-out),
+    transform var(--dur-slow) var(--ease-out);
+  /* --stagger: set via data-stagger="N" + CSS variable in markup */
+  transition-delay: calc(var(--stagger, 0) * 80ms);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* No-JS: make everything visible */
+html.no-js .reveal {
+  opacity: 1;
+  transform: none;
+}
+
+/* ============================================================
+   9. NAVIGATION
+   ============================================================ */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid transparent;
+}
+
+.nav.is-scrolled {
+  border-bottom-color: var(--color-border);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav-height);
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* Brand (name, left) */
+.nav__brand {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.nav__brand:hover {
+  color: var(--color-accent);
+}
+
+/* Right side: links + toggle container */
+.nav__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-7);
+}
+
+/* Desktop nav links */
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.nav__link {
+  position: relative;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;   /* 13px */
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--color-text);
+  text-decoration: none;
+  padding-bottom: 2px;
+}
+
+/* Underline from left on hover */
+.nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-accent);
+  transition: width var(--dur-base) var(--ease-out);
+}
+
+.nav__link:hover {
+  color: var(--color-accent);
+}
+
+.nav__link:hover::after,
+.nav__link.is-active::after {
+  width: 100%;
+}
+
+.nav__link.is-active {
+  color: var(--color-accent);
+}
+
+/* Hamburger — only visible on mobile */
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+  color: var(--color-text);
+  flex-shrink: 0;
+}
+
+.nav__bar {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background-color: currentColor;
+  border-radius: 1px;
+  transform-origin: center;
+  transition:
+    transform var(--dur-base) var(--ease-out),
+    opacity   var(--dur-base) ease;
+}
+
+/* Hamburger → X animation */
+.nav__toggle[aria-expanded="true"] .nav__bar:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.nav__toggle[aria-expanded="true"] .nav__bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.nav__toggle[aria-expanded="true"] .nav__bar:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* Mobile drawer */
+.nav__drawer {
+  display: none;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--gutter) var(--space-4);
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav__drawer.is-open {
+  display: flex;
+}
+
+.nav__drawer .nav__link {
+  font-size: 0.9375rem;
+  padding-block: 2px;
+}
+
+.nav__drawer .theme-toggle {
+  margin-top: var(--space-1);
+  align-self: flex-start;
+}
+
+/* ============================================================
+   10. THEME TOGGLE
+   ============================================================ */
+
+.theme-toggle {
+  display: flex;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-bg);
+}
+
+.theme-toggle__btn {
+  font-family: var(--font-sans);
+  font-size: 0.625rem;   /* 10px */
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 4px 10px;
+  cursor: pointer;
+  /* Override global transition for toggle-specific behaviour */
+  transition:
+    background-color var(--dur-base) ease,
+    color            var(--dur-base) ease;
+}
+
+.theme-toggle__btn.is-active {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+.theme-toggle__btn:not(.is-active):hover {
+  background-color: var(--color-accent-muted);
+  color: var(--color-text);
+}
+
+/* ============================================================
+   11. BUTTON
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 11px 24px;
+  background-color: var(--color-accent);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  border: none;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  text-decoration: none;
+  /* Override global transition */
+  transition:
+    background-color var(--dur-base) ease,
+    transform        var(--dur-base) ease,
+    box-shadow       var(--dur-base) ease;
+}
+
+.btn:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+  transition-duration: 80ms;
+}
+
+.btn--full {
+  width: 100%;
+}
+
+/* ============================================================
+   12. HERO
+   ============================================================ */
+
+.hero {
+  padding-block: var(--space-10);
+}
+
+.hero__inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-8);
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.hero__text {
+  flex: 1;
+  min-width: 0;
+  max-width: 580px;
+}
+
+/*
+  Hero elements are staggered by the JS data-delay setTimeout,
+  not by CSS transition-delay (which would double the wait time).
+  The .reveal transition fires immediately once .is-visible is added.
+*/
+
+.hero__label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 6px;
+}
+
+.hero__tagline {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.hero__statement {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 2.8vw, 1.9375rem);
+  font-weight: 400;
+  line-height: 1.42;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+  margin-bottom: var(--space-3);
+  max-width: 52ch;
+}
+
+.hero__sub {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.72;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-5);
+  max-width: 46ch;
+}
+
+/* Portrait container */
+.hero__portrait-wrap {
+  flex-shrink: 0;
+  width: 180px;
+}
+
+.hero__portrait {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 0 0 1px var(--color-border);
+  /* portrait fades in, no Y shift */
+  transition:
+    opacity   var(--dur-slow) var(--ease-out),
+    filter    var(--dur-slow) ease;
+  /* delay override — already on .hero__portrait-wrap */
+}
+
+.hero__portrait:hover {
+  filter: brightness(1.03);
+}
+
+/* ============================================================
+   13. HOW SECTION
+   ============================================================ */
+
+.how__pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+/* Pillar card */
+.pillar {
+  padding: var(--space-4);
+  border-radius: var(--radius-sm);
+  /* Override global transition for pillar-specific hover */
+  transition:
+    transform        var(--dur-base) var(--ease-out),
+    box-shadow       var(--dur-base) var(--ease-out),
+    background-color var(--dur-base) ease;
+}
+
+.pillar:hover {
+  background-color: var(--color-bg);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+}
+
+html.theme-green .pillar:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
+}
+
+.pillar__name {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-2);
+}
+
+.pillar__body {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.78;
+  color: var(--color-text);
+}
+
+/* Areas of work — dot-separated flowing list */
+.how__areas {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  line-height: 2.1;
+  color: var(--color-text-muted);
+  text-align: center;
+  max-width: 640px;
+  margin-inline: auto;
+  margin-bottom: var(--space-8);
+}
+
+/* Poem */
+.how__poem {
+  max-width: 400px;
+  margin-inline: auto;
+  padding-top: var(--space-7);
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.poem__lines {
+  font-family: var(--font-serif);
+  font-size: 0.9375rem;
+  font-style: italic;
+  line-height: 1.9;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.poem__attr {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+/* ============================================================
+   14. PRACTICAL SECTION
+   ============================================================ */
+
+.practical__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.practical__row {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: var(--space-3);
+  align-items: start;
+  padding-block: var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.practical__row:first-child {
+  border-top: 1px solid var(--color-border);
+}
+
+.practical__key {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  padding-top: 3px;   /* optical alignment */
+}
+
+.practical__value {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--color-text);
+}
+
+.practical__value p + p {
+  margin-top: 6px;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+/* ============================================================
+   15. CONTACT SECTION
+   ============================================================ */
+
+.contact__heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
+  font-weight: 400;
+  color: var(--color-text);
+  margin-bottom: var(--space-1);
+}
+
+.contact__sub {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-5);
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* Form field */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field__label {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.field__input {
+  width: 100%;
+  padding: 12px 14px;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xs);
+  outline: none;
+  -webkit-appearance: none;
+  /* Override global; keep focused transitions */
+  transition:
+    border-color var(--dur-fast) ease,
+    box-shadow   var(--dur-fast) ease,
+    background-color var(--dur-theme) ease;
+}
+
+.field__input::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.5;
+}
+
+.field__input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-muted);
+}
+
+.field__input--textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Privacy note */
+.contact__privacy {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+/* Success message */
+.contact__thanks {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--color-text);
+  margin-top: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-accent-muted);
+}
+
+/* ============================================================
+   16. FOOTER
+   ============================================================ */
+
+.footer {
+  padding-block: var(--space-5);
+  border-top: 1px solid var(--color-border);
+}
+
+.footer__inner {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+}
+
+.footer__sep {
+  color: var(--color-border);
+}
+
+/* ============================================================
+   17. ABOUT PAGE
+   ============================================================ */
+
+.about-page {
+  padding-block: var(--space-10);
+}
+
+.about-page__portrait-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-7);
+}
+
+.about-page__portrait {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 0 0 1px var(--color-border);
+  transition:
+    filter   var(--dur-slow) ease,
+    box-shadow var(--dur-slow) ease;
+}
+
+.about-page__portrait:hover {
+  filter: brightness(1.03);
+  box-shadow: 0 0 0 1px var(--color-accent-muted), 0 8px 32px rgba(0, 0, 0, 0.07);
+}
+
+.about-page__bio {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 62ch;
+}
+
+.about-page__opener {
+  font-family: var(--font-serif);
+  font-size: clamp(1.0625rem, 2vw, 1.1875rem);
+  line-height: 1.65;
+  color: var(--color-text);
+}
+
+.about-page__bio p {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.82;
+  color: var(--color-text);
+}
+
+.about-page__credentials {
+  margin-top: var(--space-7);
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-border);
+}
+
+/* ============================================================
+   18. RESPONSIVE — TABLET  (≤ 1023px)
+   ============================================================ */
+
+@media (max-width: 1023px) {
+
+  .section {
+    padding-block: var(--space-8);
+  }
+
+  .hero {
+    padding-block: var(--space-8);
+  }
+
+  .hero__portrait-wrap {
+    width: 148px;
+  }
+
+  .hero__portrait {
+    width: 148px;
+    height: 148px;
+  }
+
+  .how__pillars {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+  }
+
+  /* Third pillar spans full width */
+  .pillar:nth-child(3) {
+    grid-column: 1 / -1;
+    max-width: 400px;
+  }
+
+  .how__poem {
+    max-width: 100%;
+  }
+}
+
+/* ============================================================
+   19. RESPONSIVE — MOBILE  (≤ 767px)
+   ============================================================ */
+
+@media (max-width: 767px) {
+
+  :root {
+    --nav-height: 48px;
+  }
+
+  /* Show hamburger, hide desktop nav right */
+  .nav__toggle {
+    display: flex;
+  }
+
+  .nav__right {
+    display: none;
+  }
+
+  /* Hero: stacks portrait above text */
+  .hero {
+    padding-block: var(--space-7);
+  }
+
+  .hero__inner {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-5);
+    text-align: center;
+  }
+
+  .hero__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    order: 2;
+  }
+
+  .hero__portrait-wrap {
+    width: 120px;
+    order: 1;
+  }
+
+  .hero__portrait {
+    width: 120px;
+    height: 120px;
+  }
+
+  .hero__statement,
+  .hero__sub {
+    max-width: 100%;
+  }
+
+  /* How: single column */
+  .section {
+    padding-block: var(--space-7);
+  }
+
+  .how__pillars {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .pillar:nth-child(3) {
+    grid-column: auto;
+    max-width: none;
+  }
+
+  .how__poem {
+    text-align: left;
+    padding-top: var(--space-5);
+  }
+
+  /* Practical: label above value */
+  .practical__row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  /* About page portrait */
+  .about-page__portrait {
+    width: 180px;
+    height: 180px;
+  }
+
+  /* Footer stacks */
+  .footer__inner {
+    flex-direction: column;
+    gap: var(--space-2);
+    text-align: center;
+  }
+
+  .footer__sep {
+    display: none;
+  }
+}
+
+/* ============================================================
+   20. RESPONSIVE — SMALL MOBILE  (≤ 390px)
+   ============================================================ */
+
+@media (max-width: 390px) {
+
+  :root {
+    --gutter: 20px;
+  }
+
+  .hero__statement {
+    font-size: 1.375rem;
+  }
+
+  .how__areas {
+    text-align: left;
+  }
+}
+
+/* ============================================================
+   21. PRINT
+   ============================================================ */
+
+@media print {
+  .nav,
+  .nav__toggle,
+  .theme-toggle {
+    display: none;
+  }
+}
+
+/* ============================================================
+   22. REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    transition:
+      opacity var(--dur-base) ease;
+    transform: none;
+  }
+
+  .btn:hover {
+    transform: none;
+  }
+
+  .pillar:hover {
+    transform: none;
+  }
+}
