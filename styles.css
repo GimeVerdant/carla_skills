@@ -10,17 +10,17 @@
 :root {
   /* ── Fonts: Blue theme ─────────────────────────────────── */
   --font-serif: 'Lora', Georgia, 'Times New Roman', serif;
-  --font-sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-sans:  'Jost', 'Gill Sans', Optima, sans-serif;
 
   /* ── Colours: Blue theme (default) ────────────────────── */
-  --color-bg:           #F2F5F9;
-  --color-surface:      #FFFFFF;
-  --color-accent:       #4A7FA5;
-  --color-accent-muted: #D6E8F5;
-  --color-accent-hover: #3A6A8E;
-  --color-text:         #1C2333;
-  --color-text-muted:   #607080;
-  --color-border:       #CBD8E6;
+  --color-bg:           #E9EEF6;
+  --color-surface:      #F6F9FF;
+  --color-accent:       #2C5F8C;
+  --color-accent-muted: #C5D9EE;
+  --color-accent-hover: #1E4A70;
+  --color-text:         #131C2A;
+  --color-text-muted:   #5B6E82;
+  --color-border:       #B8CEDF;
 
   /* ── Spacing (8px grid) ────────────────────────────────── */
   --space-1:   8px;
@@ -55,12 +55,12 @@
 }
 
 /* ── Blue theme: tree-in-blue.jpg as a full-page atmospheric texture ──
-   Heavy overlay (88%) keeps it barely perceptible — mood, not wallpaper.
+   Overlay at 72% lets the image read — mood, not wallpaper.
    Fixed attachment creates a subtle parallax as the user scrolls.       */
 
 html.theme-blue body {
   background-image:
-    linear-gradient(rgba(242, 245, 249, 0.72), rgba(242, 245, 249, 0.72)),
+    linear-gradient(rgba(233, 238, 246, 0.72), rgba(233, 238, 246, 0.72)),
     url('assets/tree-in-blue.jpg');
   background-size: cover;
   background-position: center;
@@ -73,19 +73,19 @@ html.theme-blue body {
    ============================================================ */
 
 html.theme-green {
-  /* Fonts: richer, more organic serif + softer sans */
+  /* Fonts: literary display serif + humanist companion with ink-trap warmth */
   --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-  --font-sans:  'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans:  'Alegreya Sans', Palatino, 'Book Antiqua', sans-serif;
 
-  /* Colours */
-  --color-bg:           #F3F5EF;
-  --color-surface:      #FDFDF9;
-  --color-accent:       #4F6530;
-  --color-accent-muted: #DDE8CE;
-  --color-accent-hover: #3D4F24;
-  --color-text:         #252820;
-  --color-text-muted:   #636858;
-  --color-border:       #C5D0B6;
+  /* Colours — Irish bogland: moss, loam, lichen */
+  --color-bg:           #EBF0E2;
+  --color-surface:      #FAFDF4;
+  --color-accent:       #3A5224;
+  --color-accent-muted: #CDD9B8;
+  --color-accent-hover: #2B3D1C;
+  --color-text:         #1A1E17;
+  --color-text-muted:   #5C6350;
+  --color-border:       #B9C5A8;
 }
 
 /* ── Green theme: misty trees on the HOW section ────────────
@@ -96,7 +96,7 @@ html.theme-green {
 
 html.theme-green #how {
   background-image:
-    linear-gradient(rgba(253, 253, 249, 0.18), rgba(253, 253, 249, 0.18)),
+    linear-gradient(rgba(250, 253, 244, 0.18), rgba(250, 253, 244, 0.18)),
     url('assets/trees%20copy_.png');
   background-size: cover;
   background-position: bottom center;
@@ -113,30 +113,32 @@ html.theme-green #practical {
 }
 
 /* ============================================================
-   3. THEME: GRADIENT (teal)
+   3. THEME: GRADIENT (rose-green)
+   Palette: dark-spring-green #337357 · asparagus #6D9F71
+            mimi-pink #FFDBE5 · amaranth-pink #EA9AB2 · rose-pompadour #E27396
    ============================================================ */
 
 html.theme-gradient {
-  /* Fonts: contemporary display serif + rounded sans */
+  /* Fonts: optical variable display serif + editorial geometric */
   --font-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
-  --font-sans:  'Nunito Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans:  'Syne', Futura, 'Century Gothic', sans-serif;
 
   /* Colours
      --color-bg is used as a flat tint on elements (inputs, pillar hover).
      The actual page background is the gradient, set on body below. */
-  --color-bg:           rgba(180, 228, 222, 0.32);
-  --color-surface:      rgba(255, 255, 255, 0.74);
-  --color-accent:       #2EC4B6;
-  --color-accent-muted: rgba(46, 196, 182, 0.18);
-  --color-accent-hover: #25A89D;
-  --color-text:         #192028;
-  --color-text-muted:   #4C5870;
-  --color-border:       rgba(170, 210, 205, 0.65);
+  --color-bg:           rgba(255, 219, 229, 0.32);
+  --color-surface:      rgba(255, 255, 255, 0.78);
+  --color-accent:       #E27396;
+  --color-accent-muted: rgba(234, 154, 178, 0.22);
+  --color-accent-hover: #C75A7E;
+  --color-text:         #1C2A1E;
+  --color-text-muted:   #4E6952;
+  --color-border:       rgba(109, 159, 113, 0.42);
 }
 
 /* ── Full-page gradient (replaces flat background-color) ── */
 html.theme-gradient body {
-  background: linear-gradient(140deg, #A6DED7 0%, #CAC2F2 100%);
+  background: linear-gradient(140deg, #B5D8B8 0%, #FFDBE5 100%);
   background-attachment: fixed;
   min-height: 100vh;
 }
@@ -150,7 +152,7 @@ html.theme-gradient .nav {
 
 html.theme-gradient .nav.is-scrolled {
   background: rgba(255, 255, 255, 0.90);
-  border-bottom-color: rgba(170, 210, 205, 0.55);
+  border-bottom-color: rgba(109, 159, 113, 0.45);
 }
 
 /* ── Mobile drawer: frosted ─────────────────────────────── */
@@ -176,10 +178,18 @@ html.theme-gradient .btn {
 /* ── Theme toggle: sits on gradient, needs more contrast ── */
 html.theme-gradient .theme-toggle {
   background: rgba(255, 255, 255, 0.65);
-  border-color: rgba(170, 210, 205, 0.55);
+  border-color: rgba(109, 159, 113, 0.45);
 }
 
-/* ── Pillar hover: white glass card ─────────────────────── */
+/* ── Pillar cards: frosted glass base + brighter on hover ── */
+html.theme-gradient .pillar {
+  background: rgba(255, 255, 255, 0.48);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(109, 159, 113, 0.25);
+  box-shadow: 0 2px 16px rgba(40, 60, 80, 0.05);
+}
+
 html.theme-gradient .pillar:hover {
   background: rgba(255, 255, 255, 0.78);
   box-shadow: 0 12px 40px rgba(40, 60, 80, 0.08);
@@ -189,27 +199,32 @@ html.theme-gradient .pillar:hover {
 html.theme-gradient .field__input {
   background: rgba(255, 255, 255, 0.68);
   border-radius: 10px;
-  border-color: rgba(170, 210, 205, 0.7);
+  border-color: rgba(109, 159, 113, 0.55);
 }
 
 html.theme-gradient .field__input:focus {
   background: rgba(255, 255, 255, 0.88);
   border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px rgba(46, 196, 182, 0.22);
+  box-shadow: 0 0 0 3px rgba(226, 115, 150, 0.22);
 }
 
 /* ── Contact thanks message ─────────────────────────────── */
 html.theme-gradient .contact__thanks {
   background: rgba(255, 255, 255, 0.65);
-  border-color: rgba(170, 210, 205, 0.6);
+  border-color: rgba(109, 159, 113, 0.50);
 }
 
-/* ── Footer: frosted strip ──────────────────────────────── */
+/* ── Footer: frosted strip + trees peeking bottom-right ─── */
 html.theme-gradient .footer {
-  background: rgba(255, 255, 255, 0.45);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)),
+    url('assets/trees%20copy_.png');
+  background-size: auto, 28%;
+  background-position: center, bottom right;
+  background-repeat: no-repeat, no-repeat;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border-top-color: rgba(170, 210, 205, 0.5);
+  border-top-color: rgba(109, 159, 113, 0.42);
 }
 
 /* ── Portrait: soft shadow on gradient bg ───────────────── */
